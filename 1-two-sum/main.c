@@ -8,17 +8,21 @@ int main(void) {
     int test_counter = 0;
     int success_counter = 0;
     int return_size;
+    int *result;
 
     return_size = 0;
-    success_counter += test(twoSum((int[]){3,2,4}, 3, 6, &return_size), return_size, (int[]){1,2}, 2);
+    result = twoSum((int[]){3,2,4}, 3, 6, &return_size);
+    success_counter += test(result, return_size, (int[]){1,2}, 2);
     test_counter++;
 
     return_size = 0;
-    success_counter += test(twoSum((int[]){2,7,11,15}, 4, 9, &return_size), return_size, (int[]){0,1}, 2);
+    result = twoSum((int[]){2,7,11,15}, 4, 9, &return_size);
+    success_counter += test(result, return_size, (int[]){0,1}, 2);
     test_counter++;
 
     return_size = 0;
-    success_counter += test(twoSum((int[]){3,3}, 2, 6, &return_size), return_size, (int[]){0,1}, 2);
+    result = twoSum((int[]){3,3}, 2, 6, &return_size);
+    success_counter += test(result, return_size, (int[]){0,1}, 2);
     test_counter++;
 
     printf("Passed %d/%d tests\r\n", success_counter, test_counter);
